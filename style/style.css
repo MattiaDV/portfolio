@@ -141,3 +141,7 @@ html, body {
     transform: rotateZ(30deg);
     box-shadow: 2px 8px 2px 8px var(--more-gray);
 }
+
+.aboutme {
+    padding: 20px;
+}
