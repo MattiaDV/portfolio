@@ -28,10 +28,14 @@ html, body {
 }
 
 .upper-part {
-    display: flex;
+    position: absolute;
     width: 100%;
+    left: 0;
+    display: flex;
+    padding: 20px;
     justify-content: space-around;
     align-items: center;
+    background: var(--more-gray);
 }
 
 .navbar ul {
@@ -60,8 +64,15 @@ html, body {
     font-style: oblique;
 }
 
+.primaParte {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
 .left-column {
-    height: 80vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,4 +81,43 @@ html, body {
 
 .title {
     font-size: 70px;
+}
+
+.right-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 50%;
+    height: 100vh;
+}
+
+.palla {
+    position: relative;
+    height: 30%;
+    width: 30%;
+    border-radius: 50%;
+    background: var(--gray);
+    padding: 20px;
+    box-shadow: 1px 2px 1px 2px var(--more-gray);
+    transition: 1s;
+}
+
+.taglio {
+    width: 100%;
+    height: 2px;
+    background: white;
+    position: absolute;
+    transform: rotate(-245deg);
+    transition: 1s;
+    bottom: 50%;
+    right: 0;
+}
+
+.palla:hover .taglio {
+    transform: rotate(0deg);
+}
+
+.palla:hover {
+    transform: rotateZ(30deg);
+    box-shadow: 2px 8px 2px 8px var(--more-gray);
 }
