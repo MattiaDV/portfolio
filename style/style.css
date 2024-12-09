@@ -49,6 +49,11 @@ html, body {
     color: #adadad;
     border-bottom: 1px solid white;
     cursor: pointer;
+    transition: 0.4s;
+}
+
+.navbar ul li:hover {
+    color: white;
 }
 
 .navbar ul li.active {
@@ -83,6 +88,21 @@ html, body {
     font-size: 70px;
 }
 
+.button {
+    padding: 10px;
+    background: var(--sec-col);
+    margin-top: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.4s;
+    border: 1px solid var(--sec-col);
+}
+
+.button:hover {
+    background: none;
+    color: var(--sec-col);
+}
+
 .right-column {
     display: flex;
     justify-content: center;
@@ -93,7 +113,7 @@ html, body {
 
 .palla {
     position: relative;
-    height: 30%;
+    min-height: 25%;
     width: 30%;
     border-radius: 50%;
     background: var(--gray);
