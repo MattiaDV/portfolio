@@ -56,6 +56,7 @@
     height: 70vh;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .column-left {
@@ -141,6 +142,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
@@ -149,6 +151,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
@@ -177,4 +180,94 @@
 
 .service .icon {
     width: 80%;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+@media screen and (max-width: 1250px) {
+    .service {
+        min-width: 100%;
+    }
+
+    .mobile-menu {
+        position: relative;
+        display: block;
+        margin-right: 32px;
+        appearance: none;
+    }
+
+    summary {
+        list-style: none; 
+        cursor: pointer; 
+        display: inline;  
+    }   
+
+    summary::marker {
+        display: none;
+        list-style: none;
+    }
+
+    details::marker {
+        list-style: none;
+        display: none;
+    }
+    
+    summary svg {
+        display: flex;
+        width: 32px;
+    }
+
+    .mobile-m {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 32px;
+        padding: 10px;
+        background: var(--color-purple);
+        min-width: 200px;
+        color: white;
+    }
+
+    .mobile-m li {
+        padding: 10px;
+        border-bottom: 1px solid white;
+    }
+
+    .mobile-m li:hover {
+        background: white;
+        color: var(--color-purple);
+        min-width: 80%;
+        text-align: center;
+    }
+
+    .mini-menu li{
+        display: none;
+    }
+
+    .column-left {
+        padding: 40px;
+        min-width: 100%;
+    }
+
+    .column-left img {
+        max-width: 100%;
+    }
+
+    .column-right {
+        display: none;
+    }
+
+    .start {
+        display: none;
+    }
+
+    .end {
+        display: none;
+    }
 }
