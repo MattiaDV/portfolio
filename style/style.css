@@ -113,19 +113,18 @@ html, body {
 
 .palla {
     position: relative;
-    min-height: 25%;
-    width: 30%;
+    height: 200px;
+    width: 200px;
     border-radius: 50%;
     background: var(--gray);
     padding: 20px;
-    box-shadow: 1px 2px 1px 2px var(--more-gray);
     transition: 1s;
 }
 
 .taglio {
     width: 100%;
     height: 2px;
-    background: white;
+    background: var(--bg);
     position: absolute;
     transform: rotate(-245deg);
     transition: 1s;
@@ -137,11 +136,171 @@ html, body {
     transform: rotate(0deg);
 }
 
-.palla:hover {
-    transform: rotateZ(30deg);
-    box-shadow: 2px 8px 2px 8px var(--more-gray);
+.section-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
 }
 
 .aboutme {
-    padding: 20px;
+    margin-top: 32px;
 }
+
+.abText {
+    max-width: 100%;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.ab-left {
+    width: 50%;
+}
+
+.ab-right {
+    width: 50%;
+    height: 100px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quadrato {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    background: var(--gray);
+    transition: 0.4s;
+}
+
+.cerchio {
+    position: relative;
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    background: var(--bg);
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+.cerchio .button {
+    position: absolute;
+    top: -100px;
+    left: 0;
+}
+
+.quadrato:hover .cerchio {
+    transform: translateY(0px);
+    width: 199px;
+    height: 199px;
+    border-radius: 0px;
+}
+
+.quadrato:hover .cerchio .button {
+    top: 60px;
+    left: 28px;
+}
+
+.section-skill {
+    margin-top: 62px;
+}
+
+.cards-skill {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card-skill {
+    margin-top: 10px;
+    padding: 10px;
+    width: calc(100% / 4.1);
+    height: 250px;
+    display: flex;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* background: linear-gradient(var(--gray) 50%, var(--sec-col)); */
+    background: var(--gray);
+    box-shadow: 2px 4px 2px 4px var(--more-gray);
+}
+
+.name {
+    text-align: center;
+    width: 100%;
+    font-size: 32px;
+}
+
+.cerchio-90 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: conic-gradient(
+      #4caf50 0% 90%, 
+      #ddd 90% 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .cerchio-70 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: conic-gradient(
+      #4caf50 0% 70%, 
+      #ddd 70% 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .skill {
+    text-align: center;
+  }
+
+  .cerchio-60 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: conic-gradient(
+      #4caf50 0% 60%, 
+      #ddd 60% 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .cerchio-40 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: conic-gradient(
+      #4caf50 0% 40%, 
+      #ddd 40% 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .percentage {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    position: absolute;
+  }
