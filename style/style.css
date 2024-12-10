@@ -1,5 +1,5 @@
 :root {
-    --color-purple: color(srgb 0.5638 0.3375 1);
+    --color-purple: rgb(141, 83, 254);
 }
 
 * {
@@ -83,4 +83,69 @@
 
 .column-right h1 {
     font-size: 70px;
+}
+
+.second-part {
+    margin-top: 32px;
+    width: 100%;
+    padding: 20px;
+}
+
+.second-part h1 {
+    font-size: 32px;
+    margin-bottom: 32px;
+    width: 100%;
+    text-align: center;
+}
+
+.services {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.first-cards {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.second-cards {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.service {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid var(--color-purple);
+    width: calc(100% / 4.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.service .text {
+    color: var(--color-purple);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.service .text p {
+    font-size: 14px;
+    font-weight: 200;
+    margin-top: 10px;
+}
+
+.service .icon {
+    width: 80%;
 }
