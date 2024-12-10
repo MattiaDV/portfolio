@@ -10,6 +10,25 @@
     scroll-behavior: smooth;
 }
 
+.CTA {
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    background: var(--color-purple);
+    color: white;
+    border-radius: 4px;
+    border: 1px solid var(--color-purple);
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.CTA:hover {
+    background: white;
+    color: var(--color-purple);
+}
+
 .header {
     width: 100%;
     position: fixed;
@@ -58,9 +77,8 @@
 }
 
 .first-part {
-    margin-top: 132px;
     display: flex;
-    height: 70vh;
+    height: 100vh;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -93,6 +111,10 @@
     font-size: 70px;
 }
 
+.column-right p {
+    text-align: center;
+}
+
 .second-part {
     margin-top: 32px;
     width: 100%;
@@ -104,6 +126,10 @@
     margin-bottom: 32px;
     width: 100%;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .services {
@@ -282,7 +308,84 @@ a {
     padding: 10px;
 }
 
+.five-part h1 {
+    width: 100%;
+    font-size: 32px;
+    text-align: center;
+}
+
+.cards-single {
+    margin-top: 32px;
+    margin-bottom: 32px;
+    padding: 20px;
+    width: 100%;
+    gap: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card-single {
+    min-width: 100%;
+    max-height: 200px;
+    background: var(--color-purple);
+    display: flex;
+    border-radius: 4px;
+}
+
+.left-part {
+    min-width: 30%;
+}
+
+.left-part svg {
+    max-width: 50%;
+}
+
+.right-part {
+    min-width: 70%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media screen and (max-width: 1250px) {
+    .card-single {
+        min-width: 100%;
+        min-height: 450px;
+        background: var(--color-purple);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+        border-radius: 4px;
+    }
+    
+    .left-part {
+        min-width: 30%;
+    }
+    
+    .left-part svg {
+        max-width: 100%;
+    }
+    
+    .right-part {
+        min-width: 70%;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .right-part p {
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
     .service {
         position: relative;
         padding: 10px;
@@ -332,7 +435,7 @@ a {
     }
 
     .first-part {
-        margin-top: 0px;
+        margin-top: -64px;
     }
 
     .service:hover {
@@ -348,7 +451,7 @@ a {
     }
 
     .aboutme p {
-        min-width: 70%;
+        min-width: 80%;
     }
 
     .service {
