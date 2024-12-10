@@ -58,6 +58,7 @@
 }
 
 .first-part {
+    margin-top: 132px;
     display: flex;
     height: 70vh;
     justify-content: center;
@@ -283,6 +284,10 @@ a {
     .header {
         background: none;
         position: relative;
+    }
+
+    .first-part {
+        margin-top: 0px;
     }
 
     .service:hover {
