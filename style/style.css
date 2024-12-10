@@ -186,6 +186,29 @@
     display: none;
 }
 
+.third-part {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.third-part h1 {
+    width: 100%;
+    text-align: center;
+}
+
+.aboutme {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutme p {
+    max-width: 50%;
+    text-align: center;
+    margin-top: 10px;
+}
+
 @media screen and (max-width: 1250px) {
     .service {
         min-width: 100%;
