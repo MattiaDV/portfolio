@@ -7,10 +7,16 @@
     margin: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    scroll-behavior: smooth;
 }
 
 .header {
     width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: white;
 }
 
 .navbar {
@@ -170,12 +176,14 @@
     color: var(--color-purple);
     font-size: 20px;
     font-weight: 600;
+    text-align: center;
 }
 
 .service .text p {
     font-size: 14px;
     font-weight: 200;
     margin-top: 10px;
+    color: black;
 }
 
 .service .icon {
@@ -194,6 +202,7 @@
 .third-part h1 {
     width: 100%;
     text-align: center;
+    color: var(--color-purple);
 }
 
 .aboutme {
@@ -207,15 +216,44 @@
     max-width: 50%;
     text-align: center;
     margin-top: 10px;
+    font-weight: 200;
+}
+
+.fourth-part {
+    background: var(--color-purple);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.fourth-part h1 {
+    width: 100%;
+    text-align: center;
+}
+
+.contact {
+    width: 100%;
+    padding: 10px;
 }
 
 @media screen and (max-width: 1250px) {
+    .header {
+        background: none;
+        position: relative;
+    }
     .service {
         min-width: 100%;
     }
 
     .mobile-menu {
-        position: relative;
+        position: fixed;
+        right: 0px;
+        z-index: 100;
         display: block;
         margin-right: 32px;
         appearance: none;
@@ -260,6 +298,9 @@
     .mobile-m li {
         padding: 10px;
         border-bottom: 1px solid white;
+        color: white;
+        width: 180px !important;
+        text-align: center;
     }
 
     .mobile-m li:hover {
