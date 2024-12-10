@@ -322,6 +322,15 @@ a {
         position: relative;
     }
 
+    .navbar {
+        border-bottom: 0px;
+        margin-top: 42px;
+    }
+
+    .navbar img {
+        display: none;
+    }
+
     .first-part {
         margin-top: 0px;
     }
