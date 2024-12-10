@@ -99,12 +99,41 @@
 }
 
 .services {
+    position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
+}
+
+.start {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 100px;
+    height: 100%;
+    width: calc(100% / 4.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 32px;
+    color: var(--color-purple);
+}
+
+.end {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 100px;
+    height: 100%;
+    width: calc(100% / 4.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 32px;
+    color: var(--color-purple);
 }
 
 .first-cards {
