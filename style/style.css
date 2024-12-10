@@ -356,19 +356,35 @@ a {
     }
 
     summary {
+        position: relative;
         list-style: none; 
         cursor: pointer; 
         display: inline;  
     }   
+
+    summary svg {
+        position: absolute;
+        top: 45%;
+        left: 15%;
+    }
 
     summary::marker {
         display: none;
         list-style: none;
     }
 
-    details::marker {
+    details {
         list-style: none;
-        display: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: black;
+        width: 65px;
+        height: 65px;
+        padding: 10px;
+        border-radius: 50%;
+        overflow: scroll;
+        overflow: hidden;
     }
     
     summary svg {
@@ -378,8 +394,8 @@ a {
 
     .mobile-m {
         position: absolute;
-        top: 0;
-        right: 0;
+        top: 32px;
+        right: 0px;
         display: flex;
         justify-content: center;
         align-items: center;
