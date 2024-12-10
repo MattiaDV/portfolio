@@ -281,6 +281,40 @@ a {
 }
 
 @media screen and (max-width: 1250px) {
+    .service {
+        position: relative;
+        padding: 10px;
+        border-radius: 4px;
+        border: 1px solid var(--color-purple);
+        width: calc(100% / 4.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        transition: 0.4s;
+    }
+    
+    .service svg {
+        width: 100%;
+    }
+    
+    .service .text {
+        position: relative;
+        top: 0;
+        opacity: 100%;
+        color: var(--color-purple) !important;
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
+    }
+    
+    .service .text p {
+        font-size: 14px;
+        font-weight: 200;
+        margin-top: 10px;
+        color: black;
+    }
+
     .header {
         background: none;
         position: relative;
