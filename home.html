@@ -18,7 +18,7 @@
                     <a href = "#about"><li>About</li></a>
                     <a href = "#serviceInfo"><li>Services info</li></a>
                     <a href = "#contact"><li>Contact</li></a>
-                    <div id = "account-name" class = "nameAcc">AC</div>
+                    <div id = "account-name" class = "nameAcc" onclick = "window.location.href = 'personalData.html'">AC</div>
                     <div id = "logout" class = "nameAcc">Log Out</div>
                 </div>
                 <div class = "mobile-menu">
@@ -218,9 +218,11 @@
                 if (user) {
                     const uid = user.uid;
                     const email = getCookieValue("email");
-                    let accountName = document.getElementById('account-name') && document.getElementById('account-nameM') ;
+                    let accountName = document.getElementById('account-name');
+                    let acc = document.getElementById('account-nameM');
                     let nuova = email[0] + email[1];
                     accountName.innerHTML = nuova.toUpperCase();
+                    acc.innerHTML = nuova.toUpperCase();
                 } else {
                     window.location.href = 'login.html';
                 }
@@ -248,10 +250,13 @@
             console.log("Tutti i cookie sono stati cancellati!");
         }
 
-        let logout = document.getElementById('logout') && document.getElementById('logoutM');
+        let logout = document.getElementById('logout')
+        let lg = document.getElementById('logoutM');
         logout.addEventListener('click', do_signout);
+        lg.addEventListener('click', do_signout);
 
       </script>
+      <script src = "script/nomenuclick.js"></script>
     
 </body>
 </html>
