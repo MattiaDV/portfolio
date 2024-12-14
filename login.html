@@ -43,36 +43,45 @@
             const auth = getAuth(app)
 
             var signin_email_psw = function() {
-            let email = document.getElementById('email').value;
-            let password = document.getElementById('password').value;
-            let message = document.getElementById('message');
-            
-            if (email.includes('@') && email !== "") {
-                if (password !== "") {
-                    signInWithEmailAndPassword(auth, email, password)
-                    .then((userCredential) => {
-                        const user = userCredential.user;
-                        document.cookie = "email=" + email;
-                        window.location.href = 'home.html'; 
-                    })
-                    .catch((error) => {
-                        const errorCode = error.code;
-                        const errorMessage = error.message;
+                event.preventDefault(); 
 
-                        message.innerHTML = "No users exist with this data";
-                    });
-                } else {
-                    message.innerHTML = "Insert the password";
+                let email = document.getElementById('email').value.trim();
+                let password = document.getElementById('password').value;
+                let message = document.getElementById('message');
+                
+                const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                if (!emailRegex.test(email)) {
+                    message.innerHTML = "Please enter a valid email address.";
+                    return;
                 }
-            } else {
-                message.innerHTML = "Insert a valid email";
-                return;
-            }
 
-        };
+                if (password !== "" && password.length >= 6) {
+                    signInWithEmailAndPassword(auth, email, password)
+                        .then((userCredential) => {
+                            const user = userCredential.user;
+                            document.cookie = "email=" + email;
 
-        let submitButton = document.getElementById('submit-button');
-        submitButton.addEventListener('click', signin_email_psw);
+                            window.location.href = "home.html";
+                        })
+                        .catch((error) => {
+                            const errorCode = error.code;
+                            const errorMessage = error.message;
+
+                            if (errorCode === 'auth/invalid-login-credentials') {
+                                message.innerHTML = "Password errata. Riprova.";
+                            } else if (errorCode === 'auth/user-not-found') {
+                                message.innerHTML = "Nessun utente trovato con questa email.";
+                            } else {
+                                message.innerHTML = "Errore: " + errorMessage;
+                            }
+                        });
+                } else {
+                    message.innerHTML = "Password must be at least 6 characters.";
+                }
+            };
+
+            let submitButton = document.getElementById('submit-button');
+            submitButton.addEventListener('click', signin_email_psw);
         </script>
         
     </body>

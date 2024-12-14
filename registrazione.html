@@ -45,34 +45,44 @@
             var signin_email_psw = function(event) {
                 event.preventDefault(); 
 
-                let email = document.getElementById('email').value;
+                let email = document.getElementById('email').value.trim();
                 let password = document.getElementById('password').value;
                 let message = document.getElementById('message');
                 
-                if (email.includes('@') && email !== "") {
-                    if (password !== "" && password.length >= 6) {
-                        createUserWithEmailAndPassword(auth, email, password)
+                const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                if (!emailRegex.test(email)) {
+                    message.innerHTML = "Please enter a valid email address.";
+                    return;
+                }
+
+                if (password !== "" && password.length >= 6) {
+                    createUserWithEmailAndPassword(auth, email, password)
                         .then((userCredential) => {
                             const user = userCredential.user;
-                            document.cookie = "email=" + email;
 
-                            window.location.href = "home.html";
+                            sendEmailVerification(user)
+                                .then(() => {
+                                    message.innerHTML = "Verification email sent. Please check your inbox.";
+                                    
+                                    document.cookie = "email=" + email;
+                                    window.location.href = "home.html";
+                                })
+                                .catch((error) => {
+                                    const errorCode = error.code;
+                                    const errorMessage = error.message;
+                                    message.innerHTML = "Errore occurred while sending verification email: " + errorMessage;
+                                });
                         })
                         .catch((error) => {
                             const errorCode = error.code;
                             const errorMessage = error.message;
-
                             message.innerHTML = "Errore occurred: " + errorMessage;
                         });
-                    } else {
-                        message.innerHTML = "Insert the password (Min. 6 characther)";
-                    }
                 } else {
-                    message.innerHTML = "Insert a valid email";
-                    return;
+                    message.innerHTML = "Password must be at least 6 characters.";
                 }
-
             };
+
 
             let form = document.getElementById('submit-button');
             form.addEventListener('click', signin_email_psw);
