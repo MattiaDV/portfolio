@@ -2,7 +2,7 @@ import { createServer } from "http";
 import { readFile } from "fs";
 import { extname, join } from "path";
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const PUBLIC_DIR = "./"; // Cartella in cui si trovano i file statici
 
 const mimeTypes = {
