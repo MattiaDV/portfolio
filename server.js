@@ -43,6 +43,6 @@ const server = createServer((req, res) => {
 });
 
 // Avvia il server
-server.listen(PORT, 'https://ifThenElseAgency.onrender.com', () => {
+server.listen(PORT, '100.20.92.101', () => {
   console.log(`Server in esecuzione su http://localhost:${PORT}`);
 });
