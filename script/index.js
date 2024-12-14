@@ -6,3 +6,19 @@ for (let a of lists) {
         menu.removeAttribute('open');
     })
 }
+
+function getCookieValue(cookieName) {
+    const cookies = document.cookie.split("; ");
+    for (let cookie of cookies) {
+        const [name, value] = cookie.split("=");
+        if (name === cookieName) {
+            return value;
+        }
+    }
+    return null; 
+}
+
+let welcome = document.getElementById('welcome');
+const email = getCookieValue("email");
+let n = email.replace(/@.*/, "");
+welcome.innerHTML = "Welcome " + n;
