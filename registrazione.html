@@ -8,7 +8,7 @@
     </head>
     <body>
 
-        <div class = "container">
+        <div class = "container" id = "signin-form">
             <form method = "get">
                 <img src = "./img/Logo-removebg-preview.png">
                 <span class = "title">Sign UP</span>
@@ -62,7 +62,7 @@
                             const errorCode = error.code;
                             const errorMessage = error.message;
 
-                            message.innerHtml = "An user with email " + email.value + " already exist";
+                            message.innerHTML = "Errore occurred: " + errorMessage;
                         });
                     } else {
                         message.innerHTML = "Insert the password (Min. 6 characther)";
