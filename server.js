@@ -43,6 +43,6 @@ const server = createServer((req, res) => {
 });
 
 // Avvia il server
-server.listen('https://portfolio-as06.onrender.com', () => {
-  console.log(`Server in esecuzione su https://portfolio-as06.onrender.com`);
+server.listen(PORT, 'https://portfolio-as06.onrender.com', () => {
+  console.log(`Server in esecuzione su https://portfolio-as06.onrender.com:3000`);
 });
