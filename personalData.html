@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Personal Data - agency</title>
+    <link rel = "stylesheet" href = "style/style.css">
+    <link rel = "stylesheet" href = "style/login.css">
+</head>
+<body>
+
+    <div class = "header">
+        <div class = "navbar">
+            <ul>
+                <li><img src = "img/Logo-removebg-preview.png"></li>
+                <div class = "mini-menu">
+                    <a href = "home.html"><li>Home</li></a>
+                    <div id = "account-name" class = "nameAcc">AC</div>
+                    <div id = "logout" class = "nameAcc">Log Out</div>
+                </div>
+                <div class = "mobile-menu">
+                    <details id = "menu">
+                        <summary><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 6H20M4 12H20M4 18H20" stroke="#8d53fe" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></summary>
+                        <ul class = "mobile-m">
+                            <div id = "account-nameM" class = "nameAccM">AC</div>
+                            <div id = "logoutM" class = "nameAccM">Log Out</div>
+                            <a class = "mini" href = "home.html"><li>Home</li></a>
+                        </ul>
+                    </details>
+
+                </div>
+            </ul>
+        </div>
+    </div>
+
+    <div class = "third-part" style = "margin-top: 150px">
+        <h1>Your personal infos</h1>
+        <div class = "aboutme">
+            <p>
+                <span id = "emailPersonal"></span>
+                <br>
+                <br><br><input class = "CTA" onclick = "window.location.href = 'home.html'" type = "button" value = "Return home"><br>
+                <br>
+                <span>You want to reset your email?</span>
+                <input type = "email" placeholder="Jhon@gmail.com" id = "email" readonly><br><br>
+                <span id = "message"></span>
+                <input id = "reset" class = "CTA" type = "button" value = "Send password reset email"><br><br>
+            </p>
+        </div>
+    </div>
+
+    <script src = "script/home.js"></script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, signOut, sendPasswordResetEmail, getIdToken } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+        
+        const firebaseConfig = {
+          apiKey: "AIzaSyAujpwDPtXIbmbryVAJDIpFZ1s6Y3lQTfM",
+          authDomain: "ifthenelse-29504.firebaseapp.com",
+          databaseURL: "https://ifthenelse-29504-default-rtdb.firebaseio.com",
+          projectId: "ifthenelse-29504",
+          storageBucket: "ifthenelse-29504.firebasestorage.app",
+          messagingSenderId: "639924536846",
+          appId: "1:639924536846:web:b8b95558f645844eef9e5f",
+          measurementId: "G-DGPQZ3KYYP"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app)
+
+        function getCookieValue(cookieName) {
+                const cookies = document.cookie.split("; ");
+                for (let cookie of cookies) {
+                    const [name, value] = cookie.split("=");
+                    if (name === cookieName) {
+                        return value;
+                    }
+                }
+                return null; 
+            }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            onAuthStateChanged(auth, (user) => {
+                if (user) {
+                    const uid = user.uid;
+                    const email = getCookieValue("email");
+                    let accountName = document.getElementById('account-name') && document.getElementById('account-nameM') ;
+                    let nuova = email[0] + email[1];
+                    accountName.innerHTML = nuova.toUpperCase();
+                } else {
+                    window.location.href = 'login.html';
+                }
+            })
+        })
+
+        var do_signout=function(){return new Promise(function(resolve){
+                signOut(auth).then(() => {
+                resolve(true)
+                deleteAllCookies()
+                window.location.href = "index.html";
+                }).catch((error) => {
+                resolve(false)
+                deleteAllCookies()
+                window.location.href = "index.html";
+                });
+            });}
+
+        function deleteAllCookies() {
+            const cookies = document.cookie.split("; ");
+            for (let cookie of cookies) {
+                const name = cookie.split("=")[0];
+                document.cookie = name + "=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+            }
+            console.log("Tutti i cookie sono stati cancellati!");
+        }
+
+        let logout = document.getElementById('logout') && document.getElementById('logoutM');
+        logout.addEventListener('click', do_signout);
+
+        function reset_psw_email(){
+            let email=document.getElementById('email');
+            email = getCookieValue('email');
+            let msgbox=document.getElementById('message');
+                sendPasswordResetEmail(auth, email).then((userCredential) => {
+                    msgbox.innerHTML='An email has been sent, check your inbox to reset your password';
+                }).catch((error) => {
+                    let errorCode = error.code;
+                    let errorMessage = error.message;
+                    console.log(errorCode);
+                    console.log(errorMessage);
+                    msgbox.innerHTML=errorCode.replace('-',' ').replace('auth/','');
+                });
+        };
+        let reset_psw_button = document.getElementById('reset');
+        reset_psw_button.addEventListener('click', () => {reset_psw_email()});
+
+      </script>
+    
+</body>
+</html>

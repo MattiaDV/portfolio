@@ -52,6 +52,20 @@
     transition: 0.4s;
 }
 
+input {
+    border: 3px solid var(--color-purple);
+    padding: 10px;
+    border-radius: 4px;
+    background: white;
+    color: var(--color-purple);
+    min-width: 90%;
+    outline: none;
+    max-width: 90%;
+    font-size: 14px;
+    font-weight: 400;
+    transition: 0.4s;
+}
+
 .container form .submit-form {
     min-width: 90%;
     display: flex;
