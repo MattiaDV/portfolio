@@ -218,7 +218,7 @@
                 if (user) {
                     const uid = user.uid;
                     const email = getCookieValue("email");
-                    let accountName = document.getElementById('account-name');
+                    let accountName = document.getElementById('account-name') && document.getElementById('account-nameM') ;
                     let nuova = email[0] + email[1];
                     accountName.innerHTML = nuova.toUpperCase();
                 } else {
