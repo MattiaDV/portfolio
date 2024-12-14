@@ -21,7 +21,8 @@
     width: 200px;
     text-align: center;
     margin-top: 10px;
-    font-size: 14px;
+    font-size: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
     background: var(--color-purple);
     color: white;
     border-radius: 4px;
@@ -33,6 +34,7 @@
 .CTA:hover {
     background: white;
     color: var(--color-purple);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 .header {
@@ -340,15 +342,19 @@ a {
 }
 
 .card-single {
-    min-width: 100%;
+    min-width: 80%;
+    max-width: 80%;
+    padding: 20px;
     max-height: 200px;
     background: var(--color-purple);
     display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 4px;
 }
 
 .left-part {
-    min-width: 30%;
+    min-width: 20%;
 }
 
 .left-part svg {
