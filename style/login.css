@@ -1,0 +1,111 @@
+:root {
+    --color-purple: rgb(141, 83, 254);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.container {
+    padding: 10px;
+    width: 90%;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container form {
+    border: 1px solid var(--color-purple);
+    border-radius: 4px;
+    background: var(--color-purple);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 30%;
+    max-width: 30%;
+}
+
+.container form img {
+    min-width: 30%;
+    max-width: 30%;
+}
+
+.container form input {
+    border: 3px solid var(--color-purple);
+    padding: 10px;
+    border-radius: 4px;
+    background: white;
+    color: var(--color-purple);
+    min-width: 90%;
+    outline: none;
+    max-width: 90%;
+    font-size: 14px;
+    font-weight: 400;
+    transition: 0.4s;
+}
+
+.container form .submit-form {
+    min-width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.message {
+    color: white !important;
+    font-size: 12px;
+    font-weight: 600;
+    min-width: 90%;
+    max-width: 90%;
+    text-align: center;
+}
+
+.container form .submit-form input {
+    background: white;
+    color: var(--color-purple);
+    border: 1px solid var(--color-purple);
+    padding: 10px;
+    min-width: 40% !important;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.container form .submit-form input:hover {
+    border: 1px solid white;
+    background: var(--color-purple);
+    color: white;
+}
+
+.container form input:focus {
+    border: 3px solid lightgreen;
+}
+
+.title {
+    font-size: 40px;
+    color: white;
+    margin-bottom: 32px;
+}
+
+@media screen and (max-width: 1250px) {
+    .container form {
+        border: 1px solid var(--color-purple);
+        border-radius: 4px;
+        background: var(--color-purple);
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        min-width: 90%;
+        max-width: 90%;
+    }
+}

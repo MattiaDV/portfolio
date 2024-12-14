@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Log in - ifThenElse</title>
+        <link rel = "stylesheet" href = "style/login.css">
+    </head>
+    <body>
+
+        <div class = "container">
+            <form method = "get">
+                <img src = "./img/Logo-removebg-preview.png">
+                <span class = "title">Sign IN</span>
+                <input id = "email" type = "email" placeholder="Insert email">
+                <input id = "password" type = "password" placeholder="Insert password">
+                <div id = "message">
+
+                </div>
+                <div class = "submit-form">
+                    <input id = "submit-button" type = "button" value = "Sign IN">
+                </div>
+            </form>
+        </div>
+
+        <script type="module">
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+            import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, signOut, sendPasswordResetEmail, getIdToken } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+            
+            const firebaseConfig = {
+              apiKey: "AIzaSyAujpwDPtXIbmbryVAJDIpFZ1s6Y3lQTfM",
+              authDomain: "ifthenelse-29504.firebaseapp.com",
+              databaseURL: "https://ifthenelse-29504-default-rtdb.firebaseio.com",
+              projectId: "ifthenelse-29504",
+              storageBucket: "ifthenelse-29504.firebasestorage.app",
+              messagingSenderId: "639924536846",
+              appId: "1:639924536846:web:b8b95558f645844eef9e5f",
+              measurementId: "G-DGPQZ3KYYP"
+            };
+    
+            const app = initializeApp(firebaseConfig);
+            const auth = getAuth(app)
+
+            var signin_email_psw = function() {
+            let email = document.getElementById('email').value;
+            let password = document.getElementById('password').value;
+            let message = document.getElementById('message');
+            
+            if (email.includes('@') && email !== "") {
+                if (password !== "") {
+                    signInWithEmailAndPassword(auth, email, password)
+                    .then((userCredential) => {
+                        const user = userCredential.user;
+                        document.cookie = "email=" + email;
+                        window.location.href = 'home.html'; 
+                    })
+                    .catch((error) => {
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+
+                        message.innerHTML = "No users exist with this data";
+                    });
+                } else {
+                    message.innerHTML = "Insert the password";
+                }
+            } else {
+                message.innerHTML = "Insert a valid email";
+                return;
+            }
+
+        };
+
+        let submitButton = document.getElementById('submit-button');
+        submitButton.addEventListener('click', signin_email_psw);
+        </script>
+        
+    </body>
+</html>
