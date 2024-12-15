@@ -72,7 +72,6 @@
                                     const errorCode = error.code;
                                     const errorMessage = error.message;
 
-
                                     if (errorCode === 'auth/email-already-in-use') {
                                         message.innerHTML = "Email already in use";
                                     } else {
@@ -83,7 +82,11 @@
                         .catch((error) => {
                             const errorCode = error.code;
                             const errorMessage = error.message;
-                            message.innerHTML = "Errore occurred: " + errorMessage;
+                            if (errorCode === 'auth/email-already-in-use') {
+                                message.innerHTML = "Email already in use";
+                            } else {
+                                message.innerHTML = "Errore: " + errorMessage;
+                            }
                         });
                 } else {
                     message.innerHTML = "Password must be at least 6 characters.";
