@@ -54,6 +54,8 @@
                 .then((result) => {
                 const user = result.user;
                 console.log("Utente autenticato:", user);
+                const emailGoogle = result.user.email;
+                document.cookie = "email=" + emailGoogle;
 
                 window.location.href = "home.html";
 
