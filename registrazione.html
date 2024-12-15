@@ -71,7 +71,13 @@
                                 .catch((error) => {
                                     const errorCode = error.code;
                                     const errorMessage = error.message;
-                                    message.innerHTML = "Errore occurred while sending verification email: " + errorMessage;
+
+
+                                    if (errorCode === 'auth/email-already-is-use') {
+                                        message.innerHTML = "Email already in use";
+                                    } else {
+                                        message.innerHTML = "Errore: " + errorMessage;
+                                    }
                                 });
                         })
                         .catch((error) => {
