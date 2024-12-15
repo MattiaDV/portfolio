@@ -307,8 +307,8 @@ a {
 }
 
 .card-single {
-    min-width: 80%;
-    max-width: 80%;
+    min-width: 50%;
+    max-width: 50%;
     padding: 20px;
     max-height: 200px;
     background: var(--color-purple);
@@ -319,19 +319,23 @@ a {
 }
 
 .left-part {
-    min-width: 20%;
+    min-width: 10%;
 }
 
 .left-part svg {
-    max-width: 50%;
+    max-width: 100%;
 }
 
 .right-part {
-    min-width: 70%;
+    min-width: 80%;
     color: white;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+}
+
+.right-part p {
+    max-width: 70%;
 }
 
 .sign {
