@@ -55,6 +55,8 @@
                 const user = result.user;
                 console.log("Utente autenticato:", user);
 
+                window.location.href = "home.html";
+
                 const credential = GoogleAuthProvider.credentialFromResult(result);
                 const token = credential.accessToken;
                 console.log("Token:", token);
