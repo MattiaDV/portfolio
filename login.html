@@ -97,9 +97,9 @@
                             const errorMessage = error.message;
 
                             if (errorCode === 'auth/invalid-login-credentials') {
-                                message.innerHTML = "Password errata. Riprova.";
+                                message.innerHTML = "Wrong password. Try again!";
                             } else if (errorCode === 'auth/user-not-found') {
-                                message.innerHTML = "Nessun utente trovato con questa email.";
+                                message.innerHTML = "No user found with this email";
                             } else {
                                 message.innerHTML = "Errore: " + errorMessage;
                             }
