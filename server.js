@@ -21,6 +21,9 @@ app.get('/', async (req, res) => {
 })
 
 app.get('/index', async (req, res) => {
+  if (req.session) {
+    req.session.destroy();
+  }
   getPages.getIndex(req, res);
 })
 
@@ -29,8 +32,10 @@ app.get('/forgetPassword', async (req, res) => {
 })
 
 app.get('/home', async (req, res) => {
-  req.session.user = "user";
-  console.log("Sessione creata");
+  if (!req.session) {
+    req.session.user = "user";
+    console.log("Sessione creata");
+  }
   getPages.getHome(req, res);
 })
 
