@@ -14,16 +14,14 @@ app.use(session({
 app.use(express.static('./'));
 
 app.get('/', async (req, res) => {
-  if (req.session) {
-    req.session.destroy();
-  }
+  req.session.destroy();
+  console.log("Sessione distrutta");
   getPages.getIndex(req, res);
 })
 
 app.get('/index', async (req, res) => {
-  if (req.session) {
-    req.session.destroy();
-  }
+  req.session.destroy();
+  console.log("Sessione distrutta");
   getPages.getIndex(req, res);
 })
 
@@ -32,10 +30,8 @@ app.get('/forgetPassword', async (req, res) => {
 })
 
 app.get('/home', async (req, res) => {
-  if (!req.session) {
-    req.session.user = "user";
-    console.log("Sessione creata");
-  }
+  req.session.user = "user";
+  console.log("Sessione creata");
   getPages.getHome(req, res);
 })
 
