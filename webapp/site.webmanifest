@@ -2,7 +2,7 @@
     "short_name": "IfThenElse",
     "name": "IfThenElse, more then website",
     "icons": [{
-        "src": "../img/logo.png",
+        "src": "../img/Logo.png",
         "type": "image/jpg",
         "sizes": "192x192"
     }],
