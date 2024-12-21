@@ -1,11 +1,22 @@
 const express = require('express');
 const getPages = require('./api/getPages');
+const session = require('express-session');
 
 const app = express();
+
+app.use(session({
+  secret: 'segreto',
+  resave: false,    
+  saveUninitialized: true, 
+  cookie: { secure: true }
+}))
 
 app.use(express.static('./'));
 
 app.get('/', async (req, res) => {
+  if (req.session) {
+    req.session.destroy();
+  }
   getPages.getIndex(req, res);
 })
 
@@ -18,6 +29,8 @@ app.get('/forgetPassword', async (req, res) => {
 })
 
 app.get('/home', async (req, res) => {
+  req.session.user = "user";
+  console.log("Sessione creata");
   getPages.getHome(req, res);
 })
 
