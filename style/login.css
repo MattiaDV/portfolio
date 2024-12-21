@@ -119,12 +119,13 @@ input {
     align-items: center;
 }
 
-.message {
-    color: white !important;
+#message {
+    color: red !important;
     font-size: 12px;
     font-weight: 600;
     min-width: 90%;
     max-width: 90%;
+    max-height: 10px !important;
     text-align: center;
 }
 
