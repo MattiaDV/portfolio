@@ -18,14 +18,14 @@
                     <a href = "#about"><li>About</li></a>
                     <a href = "#serviceInfo"><li>Services info</li></a>
                     <a href = "#contact"><li>Contact</li></a>
-                    <div id = "account-name" class = "nameAcc" onclick = "window.location.href = 'personalData.html'">AC</div>
+                    <div id = "account-name" class = "nameAcc" onclick = "window.location.href = '/personalData'">AC</div>
                     <div id = "logout" class = "nameAcc">Log Out</div>
                 </div>
                 <div class = "mobile-menu">
                     <details id = "menu">
                         <summary><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 6H20M4 12H20M4 18H20" stroke="#8d53fe" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></summary>
                         <ul class = "mobile-m">
-                            <div id = "account-nameM" class = "nameAccM" onclick = "window.location.href = 'personalData.html'">AC</div>
+                            <div id = "account-nameM" class = "nameAccM" onclick = "window.location.href = '/personalData'">AC</div>
                             <div id = "logoutM" class = "nameAccM">Log Out</div>
                             <a class = "mini" href = "#home"><li>Home</li></a>
                             <a class = "mini" href = "#service"><li>Service</li></a>
@@ -252,7 +252,7 @@
                     accountName.innerHTML = nuova.toUpperCase();
                     acc.innerHTML = nuova.toUpperCase();
                 } else {
-                    window.location.href = 'login.html';
+                    window.location.href = '/login';
                 }
             })
         })
@@ -261,11 +261,11 @@
                 signOut(auth).then(() => {
                 resolve(true)
                 deleteAllCookies()
-                window.location.href = "index.html";
+                window.location.href = "/index";
                 }).catch((error) => {
                 resolve(false)
                 deleteAllCookies()
-                window.location.href = "index.html";
+                window.location.href = "/index";
                 });
             });}
 

@@ -14,7 +14,7 @@
             <ul>
                 <li><img src = "img/Logo-removebg-preview.png"></li>
                 <div class = "mini-menu">
-                    <a href = "home.html"><li>Home</li></a>
+                    <a href = "/home"><li>Home</li></a>
                     <div id = "account-name" class = "nameAcc">AC</div>
                     <div id = "logout" class = "nameAcc">Log Out</div>
                 </div>
@@ -24,7 +24,7 @@
                         <ul class = "mobile-m">
                             <div id = "account-nameM" class = "nameAccM">AC</div>
                             <div id = "logoutM" class = "nameAccM">Log Out</div>
-                            <a class = "mini" href = "home.html"><li>Home</li></a>
+                            <a class = "mini" href = "/home"><li>Home</li></a>
                         </ul>
                     </details>
 
@@ -39,7 +39,7 @@
             <p>
                 <span id = "emailPersonal"></span>
                 <br>
-                <br><br><input class = "CTA" onclick = "window.location.href = 'home.html'" type = "button" value = "Return home"><br>
+                <br><br><input class = "CTA" onclick = "window.location.href = '/home'" type = "button" value = "Return home"><br>
                 <br>
                 <span>You want to change your password?</span>
                 <input type = "email" placeholder="Jhon@gmail.com" id = "email" readonly><br><br>
@@ -90,7 +90,7 @@
                     accountName.innerHTML = nuova.toUpperCase();
                     acc.innerHTML = nuova.toUpperCase();
                 } else {
-                    window.location.href = 'login.html';
+                    window.location.href = '/login';
                 }
             })
         })
@@ -99,11 +99,11 @@
                 signOut(auth).then(() => {
                 resolve(true)
                 deleteAllCookies()
-                window.location.href = "index.html";
+                window.location.href = "/index";
                 }).catch((error) => {
                 resolve(false)
                 deleteAllCookies()
-                window.location.href = "index.html";
+                window.location.href = "/index";
                 });
             });}
 
