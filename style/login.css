@@ -120,12 +120,13 @@ input {
 }
 
 #message {
-    color: red !important;
-    font-size: 12px;
-    font-weight: 600;
+    color: rgb(127, 1, 1) !important;
+    font-size: 16px;
+    font-weight: 200;
     min-width: 90%;
     max-width: 90%;
     max-height: 10px !important;
+    margin-bottom: 10px !important;
     text-align: center;
 }
 
