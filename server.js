@@ -33,10 +33,10 @@ app.get('/registrazione', async (req, res) => {
   getPages.getReg(req, res);
 })
 
-app.listen(function(err) {
+app.listen(process.env.PORT || 3000, function(err) {
   if (err) {
     console.log("Errore nella connessione del server");
   } else {
-    console.log("Connession stabilita su http://127.0.0.1:3000");
+    console.log(`Connessione stabilita su https://portfolio-ul1w.onrender.com:${process.env.PORT || 3000}`);
   }
-})
+});
