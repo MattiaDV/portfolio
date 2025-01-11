@@ -553,6 +553,7 @@ a {
     .first-part {
         margin-top: -64px;
         background: -webkit-linear-gradient(var(--light-purple), #fff);
+        margin-top: -100px !important;
     }
 
     .text {
