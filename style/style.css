@@ -1,5 +1,6 @@
 :root {
     --color-purple: rgb(141, 83, 254);
+    --light-purple: rgb(198, 169, 255);
 }
 
 * {
@@ -16,13 +17,25 @@
     color: var(--color-purple);
 }
 
+.social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.social-media div svg {
+    width: 30px;
+    height: 30px;
+}
+
 .CTA {
     padding: 10px;
     width: 200px;
     text-align: center;
     margin-top: 10px;
     font-size: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 14px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.08);
     background: var(--color-purple);
     color: white;
     border-radius: 4px;
@@ -34,7 +47,7 @@
 .CTA:hover {
     background: white;
     color: var(--color-purple);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 24px rgba(0, 0, 0, 0.2), 0 10px 14px rgba(0, 0, 0, 0.1);
 }
 
 .header {
@@ -92,6 +105,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    background: -webkit-linear-gradient(var(--light-purple), #fff);
 }
 
 #logout {
@@ -538,6 +552,7 @@ a {
 
     .first-part {
         margin-top: -64px;
+        background: -webkit-linear-gradient(var(--light-purple), #fff);
     }
 
     .text {
@@ -584,17 +599,17 @@ a {
     }
 
     details {
+        position: fixed;
+        top: 10px;
+        right: 20px;
         list-style: none;
         display: flex;
         justify-content: center;
         align-items: center;
-        background: black;
         width: 65px;
         height: 65px;
         padding: 10px;
         border-radius: 50%;
-        overflow: scroll;
-        overflow: hidden;
     }
     
     summary svg {
