@@ -610,6 +610,7 @@ a {
         width: 65px;
         height: 65px;
         padding: 10px;
+        appearance: none;
         border-radius: 50%;
     }
     
