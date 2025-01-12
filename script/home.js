@@ -1,5 +1,6 @@
 let lists = document.getElementsByClassName('mini');
 let menu = document.getElementById('menu');
+let mobileM = document.getElementById('mobile-m');
 
 for (let a of lists) {
     a.addEventListener('click', function() {
