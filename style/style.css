@@ -394,6 +394,10 @@ a {
     transition: 0.4s;
 }
 
+.social-media div svg {
+    cursor: pointer;
+}
+
 .nameAcc:hover {
     background: white;
     color: var(--color-purple);
