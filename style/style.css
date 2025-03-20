@@ -18,6 +18,22 @@
     color: var(--color-purple);
 }
 
+#pdf-canvas {
+    max-width: 80vw;
+    border-radius: 4px;
+    border: 1px solid var(--color-purple);
+    padding: 20px;
+}
+
+.container-card-collab > button {
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background: var(--color-purple);
+    border-radius: 4px;
+    border: 1px solid var(--color-purple);
+}
+
 .social-media {
     display: flex;
     justify-content: center;

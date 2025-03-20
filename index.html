@@ -141,9 +141,57 @@
     <div class = "part_collab">
         <h1>Presentazione</h1>
         <div class = "container-card-collab">
-            <iframe src="https://ifthenelse-agency.netlify.app/file/Volantino IfThenElse.pdf" width="600" height="500"></iframe>
+            <canvas id="pdf-canvas"></canvas>
+            <button id="prev">< Precedente</button>
+            <button id="next">Successivo ></button>
         </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script>
+        const url = './file/Volantino IfThenElse.pdf';  // Percorso del tuo file PDF
+        let pdfDoc = null;
+        let currentPage = 1;
+        let totalPages = 0;
+      
+        pdfjsLib.getDocument(url).promise.then(function(pdf) {
+          pdfDoc = pdf;
+          totalPages = pdf.numPages;
+          renderPage(currentPage);
+        });
+      
+        function renderPage(pageNum) {
+          pdfDoc.getPage(pageNum).then(function(page) {
+            const canvas = document.getElementById('pdf-canvas');
+            const context = canvas.getContext('2d');
+            const viewport = page.getViewport({ scale: 1.5 });
+            
+            canvas.height = viewport.height;
+            canvas.width = viewport.width;
+            
+            page.render({
+              canvasContext: context,
+              viewport: viewport
+            });
+          });
+        }
+      
+        // Naviga alla pagina successiva
+        document.getElementById('next').addEventListener('click', function() {
+          if (currentPage < totalPages) {
+            currentPage++;
+            renderPage(currentPage);
+          }
+        });
+      
+        // Naviga alla pagina precedente
+        document.getElementById('prev').addEventListener('click', function() {
+          if (currentPage > 1) {
+            currentPage--;
+            renderPage(currentPage);
+          }
+        });
+      </script>      
 
     <div class = "fourth-part">
         <a id="contact"></a>
