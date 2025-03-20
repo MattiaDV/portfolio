@@ -453,13 +453,16 @@ a {
     .card-single {
         min-width: 100%;
         min-height: 450px;
-        background: var(--color-purple);
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         padding: 20px;
         border-radius: 4px;
+    }
+    
+    .container-card-collab {
+        justify-content: center;
     }
 
     .nameAccM {
@@ -498,7 +501,6 @@ a {
     
     .right-part {
         min-width: 70%;
-        color: white;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -517,6 +519,7 @@ a {
         padding: 10px;
         border-radius: 4px;
         border: 1px solid var(--color-purple);
+        background: var(--color-purple);
         width: calc(100% / 4.1);
         display: flex;
         justify-content: center;
@@ -537,7 +540,6 @@ a {
         position: relative;
         top: 0;
         opacity: 100%;
-        color: var(--color-purple) !important;
         font-size: 20px !important;
         font-weight: 600;
         text-align: center;
@@ -547,7 +549,6 @@ a {
         font-size: 14px !important;
         font-weight: 200;
         margin-top: 10px;
-        color: black;
     }
 
     .header {
