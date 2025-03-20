@@ -408,6 +408,41 @@ a {
     color: var(--color-purple);
 }
 
+.part_collab {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+
+.container-card-collab {
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.collab-card {
+    width: 300px;
+    height: 100px;
+    padding: 20px;
+    border: 1px solid var(--light-purple);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.collab-card > img {
+    max-width: 90%;
+}
+
 @media screen and (max-width: 1350px) {
     .first-part {
         margin-top: 32px;
